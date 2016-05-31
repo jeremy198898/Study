@@ -1,7 +1,9 @@
 /* service */
 apply plugin: 'war'
+
 dependencies {
 		//compile fileTree(dir: '../libs', include: ['*.jar'])
+		compile group: 'com.sun.jersey', name: 'jersey-core', version: '1.19.1'
 	}
 
 
