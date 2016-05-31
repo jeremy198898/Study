@@ -1,0 +1,7 @@
+/* service */
+apply plugin: 'war'
+dependencies {
+		//compile fileTree(dir: '../libs', include: ['*.jar'])
+	}
+
+
