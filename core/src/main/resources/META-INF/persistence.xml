@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="jpa-core" transaction-type="RESOURCE_LOCAL">
+        <description>example of enabling the second level cache.</description>
+        <jta-data-source>java:jboss/datasources/mydatasource</jta-data-source>
+    </persistence-unit>
+</persistence>
