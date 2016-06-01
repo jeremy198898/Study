@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+
     <persistence-unit name="jpa-core" transaction-type="RESOURCE_LOCAL">
         <description>example of enabling the second level cache.</description>
-        <jta-data-source>java:jboss/datasources/mydatasource</jta-data-source>
+        <!-- If you do not set transaction-type or just use non-jta-data-source tag,
+         it automatically recognizes transaction-type as RESOURCE_LOCAL and vice versa.-->
+        <non-jta-data-source>java:jboss/datasources/mydatasource</non-jta-data-source>
     </persistence-unit>
+
 </persistence>
