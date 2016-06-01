@@ -4,5 +4,4 @@
 
 2 setup the jboss environment
 
-(Don't forget setting up github log info in idea settings,
-which lead to failure with commit and push.)
+(Don't forget setting up github log info in idea settings,or it will lead to failure with commit and push.)
