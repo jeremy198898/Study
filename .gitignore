@@ -1,6 +1,7 @@
-
 .idea/
 out/
 service/build/
-service/src/main/webapp/
 webapp/build/
+.gradle/
+core/build/
+tools/build/
