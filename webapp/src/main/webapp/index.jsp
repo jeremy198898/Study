@@ -11,7 +11,7 @@
     <title>HI</title>
   </head>
   <body>
-  <div>Hello!</div><br />
+  <div>Hello!This is just test!</div><br />
   <div>
     <form method="post" action="/webapp/hello">
       <input type="text" name="typein" /><br />
