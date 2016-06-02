@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+*{margin:0;padding:0;}
+#container{width:896px;margin:30px auto;font-family:"Microsoft YaHei";}
+.center{text-align: center;}
+.f{float:left;}
+.cart-thead {display: inline-block; height:30px;line-height:30px;color:#fff;font-weight:bold;width:895px;
+ background: #f3f3f3;border: 1px solid #e9e9e9; border-top: 0;background:#f0ad4e;}
+ .column{padding:0px 42px;}
+table tr{height:50px;}
+table td{width:135px;text-align:center;}
+.bottom{background: #ffe4c4;height:30px;line-height:30px;}
+.even{background:#e2efff; }
+.odd{background: #edf6ff;}
+</style>
+<script>
+$(document).ready(function(){
+	$("table tr:even").css("background","#e2efff");
+	$("table tr:odd").css("background","#edf6ff");
+});
+</script>
+<body>
+<div id="container">
+	<div class="order center">
+		<span>订单编号：</span>
+		<span>金额：</span>
+	</div>
+	<br/>
+	<div class="cart-thead">			
+			<div class="column f">SKU</div>
+			<div class="column f">名称</div>
+			<div class="column f">型号</div>
+			<div class="column f">品牌</div>
+			<div class="column f">单价(元)</div>
+			<div class="column f">单位</div>
+			<div class="column f">购买数量</div>
+
+	</div>
+	<table >
+		<tr class="even">
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+		</tr>
+		<tr class="odd">
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+		</tr>
+		<tr class="even">
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+			<td>谷歌</td>
+		</tr>
+	</table>
+	<br/>
+	<div class="bottom center">Copyright © 广通工业品 2013-2016 All Right Reserved.</div>
+</div>
+</body>
+</html>

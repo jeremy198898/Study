@@ -6,7 +6,9 @@
         <description>example of enabling the second level cache.</description>
         <!-- If you do not set transaction-type or just use non-jta-data-source tag,
          it automatically recognizes transaction-type as RESOURCE_LOCAL and vice versa.-->
-        <non-jta-data-source>java:jboss/datasources/mydatasource</non-jta-data-source>
+        <non-jta-data-source>
+            java:jboss/datasources/PostgresqlDS
+        </non-jta-data-source>
     </persistence-unit>
 
 </persistence>
