@@ -1,50 +1,48 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Document</title></head>
 <style>
-*{margin:0;padding:0;}
-#container{width:896px;margin:30px auto;font-family:"Microsoft YaHei";}
-.center{text-align: center;}
-.f{float:left;}
-.cart-thead {display: inline-block; height:30px;line-height:30px;color:#fff;font-weight:bold;width:895px;
- background: #f3f3f3;border: 1px solid #e9e9e9; border-top: 0;background:#f0ad4e;}
- .column{padding:0px 42px;}
-table tr{height:50px;}
-table td{width:135px;text-align:center;}
-.bottom{background: #ffe4c4;height:30px;line-height:30px;}
-.even{background:#e2efff; }
-.odd{background: #edf6ff;}
+	*{margin:0;padding:0;}
+	#container{width:896px;margin:30px auto;font-family:"Microsoft YaHei";}
+	.center{text-align: center;}
+	.f{float:left;}
+	.cart-thead {display: inline-block; height:30px;line-height:30px;color:#fff;font-weight:bold;width:895px;
+		background: #f3f3f3;border: 1px solid #e9e9e9; border-top: 0;background:#f0ad4e;}
+	.column{padding:0px 43px;}
+	table tr{height:50px;}
+	table td{width:135px;text-align:center;}
+	.bottom{background: #ffe4c4;height:30px;line-height:30px;}
+	.even{background:#e2efff; }
+	.odd{background: #edf6ff;}
+	.username{color: #0066cc;font-size: 20px;}
+	.order-info{font-size: 17px;color: #d43f3a;}
+	.n{text-decoration:none;background: #ffe4c4;height:30px;line-height:30px;}
 </style>
-<script>
-$(document).ready(function(){
-	$("table tr:even").css("background","#e2efff");
-	$("table tr:odd").css("background","#edf6ff");
-});
-</script>
 <body>
 <div id="container">
-	<div class="order center">
-		<span>订单编号：</span>
-		<span>金额：</span>
+	<div class="n center">广通工业品企业客户平台 <a href="http://www.greentown.cn">GREENTOWN.CN</a></div>
+	<div class="order">
+		<p>您好，<span class="username">Jeremy</span> 您已经成功提交订单！</p>
 	</div>
 	<br/>
-	<div class="cart-thead">			
-			<div class="column f">SKU</div>
-			<div class="column f">名称</div>
-			<div class="column f">型号</div>
-			<div class="column f">品牌</div>
-			<div class="column f">单价(元)</div>
-			<div class="column f">单位</div>
-			<div class="column f">购买数量</div>
+	<div class="order">
+		<span>订单编号：<span class="order-info">90000239</span></span>&nbsp;&nbsp;&nbsp;
+		<span>金额：<span class="order-info">9895.23</span></span>&nbsp;&nbsp;&nbsp;
+		<span>提交日期：<span class="order-info">2016-05-06 18:32:10</span></span>
+	</div>
+	<br/>
+	<div class="cart-thead">
+		<div class="column f">SKU</div>
+		<div class="column f">名称</div>
+		<div class="column f">型号</div>
+		<div class="column f">品牌</div>
+		<div class="column f">单价(元)</div>
+		<div class="column f">单位</div>
+		<div class="column f">购买数量</div>
 
 	</div>
 	<table >
 		<tr class="even">
 			<td>谷歌</td>
-			<td>谷歌</td>
+			<td>谷歌谷歌谷歌谷歌谷歌谷歌谷歌谷歌</td>
 			<td>谷歌</td>
 			<td>谷歌</td>
 			<td>谷歌</td>
@@ -53,16 +51,7 @@ $(document).ready(function(){
 		</tr>
 		<tr class="odd">
 			<td>谷歌</td>
-			<td>谷歌</td>
-			<td>谷歌</td>
-			<td>谷歌</td>
-			<td>谷歌</td>
-			<td>谷歌</td>
-			<td>谷歌</td>
-		</tr>
-		<tr class="even">
-			<td>谷歌</td>
-			<td>谷歌</td>
+			<td>谷歌谷歌谷歌谷歌</td>
 			<td>谷歌</td>
 			<td>谷歌</td>
 			<td>谷歌</td>
@@ -72,6 +61,4 @@ $(document).ready(function(){
 	</table>
 	<br/>
 	<div class="bottom center">Copyright © 广通工业品 2013-2016 All Right Reserved.</div>
-</div>
-</body>
-</html>
+</div></body></html>
