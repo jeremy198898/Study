@@ -2,8 +2,8 @@
 out/
 service/build/
 webapp/build/
-.gradle/
 core/build/
 tools/build/
 classes/
+.gradle/
 
