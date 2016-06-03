@@ -5,3 +5,5 @@ webapp/build/
 .gradle/
 core/build/
 tools/build/
+classes/
+
