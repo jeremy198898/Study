@@ -3,7 +3,7 @@
  You don't need <non-jta-data-source> when your datasource is configured in <properties>.
  <non-jta-data-source> is needed when datasource is configured in application server configuration and obtained via JNDI.
 
- persistence.xml文件的位置决定持久性的根1(Persistence Root)。持久性的根为JAR文件或者包含META-INF目录（前提是persistence.xml位于此）的目录。
+ persistence.xml文件的位置决定持久性的根(Persistence Root)。持久性的根为JAR文件或者包含META-INF目录（前提是persistence.xml位于此）的目录。
  一般将这个persistence.xml文件放在src下的META-INF中。命名及位置都不能变
  -->
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
