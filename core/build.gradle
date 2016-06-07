@@ -1,7 +1,6 @@
 /* service */
 dependencies {
 	//compile fileTree(dir: '../libs', include: ['*.jar'])
-    // http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence
     compile group: 'org.eclipse.persistence', name: 'javax.persistence', version: '2.1.1'
 }
 
