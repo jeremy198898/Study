@@ -14,9 +14,12 @@ public class ConvertBean {
     //private final BigDecimal euroRate =  new BigDecimal("0.134");
 
     public BigDecimal yuanToDollar(BigDecimal yuan){
-        BigDecimal result = yuan.divide(yuanRate);
+        BigDecimal result = yuan.divide(yuanRate, 2, BigDecimal.ROUND_HALF_UP);
+        return result;
+    }
 
-        return result.setScale(2, BigDecimal.ROUND_UP);
+    public int add(int a , int b){
+        return a+b;
     }
 
     public String sayHello(){

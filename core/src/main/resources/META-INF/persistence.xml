@@ -5,16 +5,17 @@
 
  persistence.xml文件的位置决定持久性的根(Persistence Root)。持久性的根为JAR文件或者包含META-INF目录（前提是persistence.xml位于此）的目录。
  一般将这个persistence.xml文件放在src下的META-INF中。命名及位置都不能变
- -->
+-->
+
+<!--
+    If you do not set transaction-type or just use non-jta-data-source tag,
+    it automatically recognizes transaction-type as RESOURCE_LOCAL and vice versa.
+-->
+
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
 
     <persistence-unit name="mysql" transaction-type="JTA">
-        <description>example of enabling the second level cache.</description>
-        <!-- If you do not set transaction-type or just use non-jta-data-source tag,
-         it automatically recognizes transaction-type as RESOURCE_LOCAL and vice versa.-->
-        <jta-data-source>
-            java:jboss/datasources/MysqlDS
-        </jta-data-source>
+        <jta-data-source>java:jboss/datasources/MysqlDS</jta-data-source>
     </persistence-unit>
 
 </persistence>
