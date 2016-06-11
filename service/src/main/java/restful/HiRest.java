@@ -1,13 +1,8 @@
 package restful;
 
-import ejb.ConvertBean;
-
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -32,19 +27,20 @@ public class HiRest {
         return "Oops, there is no content here!";
     }
 
+    //EJB test
     @GET
     @Path("/ejbtest")
     @Produces(MediaType.TEXT_PLAIN)
     public String hi() {
-        try
-        {
-            Context ctx = (Context) new InitialContext();
-
-        }
-        catch (NamingException e)
-        {
-            e.printStackTrace();
-        }
+//        try
+//        {
+//            //Context ctx = (Context) new InitialContext();
+//
+//        }
+//        catch (NamingException e)
+//        {
+//            e.printStackTrace();
+//        }
         return "Hello";
     }
 }
