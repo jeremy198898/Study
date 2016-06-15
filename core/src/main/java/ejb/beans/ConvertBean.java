@@ -1,4 +1,4 @@
-package ejb;
+package ejb.beans;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
