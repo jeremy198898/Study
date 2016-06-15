@@ -1,12 +1,14 @@
 package ejb;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import java.math.BigDecimal;
 
 /**
  * Created by jeremy on 2016/6/7.
  */
-@Stateless(mappedName = "Converter")
+@Stateless
+@LocalBean
 public class ConvertBean {
 
     private final BigDecimal yuanRate =  new BigDecimal("6.5689");

@@ -12,7 +12,8 @@ import java.io.PrintWriter;
  * Created by jeremy on 2016/5/12.
  */
 @WebServlet("/hello")
-public class Hi extends HttpServlet {
+public class Hi extends HttpServlet
+{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
