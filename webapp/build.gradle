@@ -6,7 +6,7 @@ dependencies {
 		//compile ('javax.servlet:javax.servlet-api:3.1.0')
 
         // http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
-        compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+        //compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
 
 }
 

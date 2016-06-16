@@ -10,4 +10,10 @@ subprojects{
 
     //解决Gradle编译时出现： 编码GBK的不可映射字符
     [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+	dependencies{
+		// http://mvnrepository.com/artifact/javax/javaee-api
+		compile group: 'javax', name: 'javaee-api', version: '7.0'
+
+	}
 }
