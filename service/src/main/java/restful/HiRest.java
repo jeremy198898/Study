@@ -1,5 +1,8 @@
 package restful;
 
+import ejb.beans.HiBean;
+
+import javax.ejb.EJB;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -9,11 +12,14 @@ import javax.ws.rs.core.MediaType;
  * Created by jeremy on 2016/5/31.
  */
 
-@Path("/users")
+@Path("users")
 public class HiRest {
 
+    @EJB
+    private HiBean hiBean;
+
     @GET
-    @Path("/showall")
+    @Path("showall")
     @Produces(MediaType.APPLICATION_JSON)
     public String getHtml()
     {
@@ -27,20 +33,12 @@ public class HiRest {
         return "Oops, there is no content here!";
     }
 
-    //EJB test
     @GET
-    @Path("/ejbtest")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hi() {
-//        try
-//        {
-//            //Context ctx = (Context) new InitialContext();
-//
-//        }
-//        catch (NamingException e)
-//        {
-//            e.printStackTrace();
-//        }
-        return "Hello";
+    @Path("ejb")
+    @Produces (MediaType.APPLICATION_JSON)
+    public String ejb()
+    {
+        return hiBean.sayHello();
     }
+
 }

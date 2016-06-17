@@ -1,5 +1,8 @@
 package servlets;
 
+import ejb.beans.HiBean;
+
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,21 +17,27 @@ import java.io.PrintWriter;
 @WebServlet("/hello")
 public class Hi extends HttpServlet
 {
+    @EJB
+    private HiBean hiBean;
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         //String c = req.getParameter("test");
         //String x = req.getParameter("number");
-        String chtest = "这是个测试";
+        //String chtest = "这是个测试";
+        String hi = hiBean.sayHello();
         //String client = req.getHeader("User-Agent");
         //out.print("The parameter is "+c+" "+x);
-        out.println(chtest);
+        out.println(hi);
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    {
         resp.setContentType("text/html");
 
         PrintWriter out = resp.getWriter();
@@ -38,7 +47,8 @@ public class Hi extends HttpServlet
         //String client = req.getHeader("User-Agent");
         //String host = req.getRemoteHost();
 
-        if (para.equals("wildfly") && color.equals("red")) {
+        if (para.equals("wildfly") && color.equals("red"))
+        {
             resp.sendRedirect("http://www.zhangzhide.com:9990");
         }
 
