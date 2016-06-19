@@ -11,5 +11,11 @@
             <session-type>Stateless</session-type>
             <transaction-type>Container</transaction-type>
         </session>
+        <session>
+            <ejb-name>TestEJB</ejb-name>
+            <ejb-class>ejb.beans.TestBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
     </enterprise-beans>
 </ejb-jar>
