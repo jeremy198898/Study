@@ -16,6 +16,10 @@
 
     <persistence-unit name="mysql" transaction-type="JTA">
         <jta-data-source>java:jboss/datasources/MysqlDS</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialact" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+        </properties>
     </persistence-unit>
 
 </persistence>

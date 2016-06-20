@@ -1,7 +1,6 @@
 package entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -9,19 +8,19 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "t_users")
-public class Test implements Serializable {
+public class Users implements Serializable {
 
-    public Test(){}
+    public Users(){}
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @NotNull
-    @Column(length = 50)
+    @Column(name = "username", length = 50, nullable = false)
     private String username;
 
-    @NotNull
+    @Column (name = "password", nullable = false)
     private String password;
 
     public int getId() {
