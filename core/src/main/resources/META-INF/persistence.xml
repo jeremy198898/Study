@@ -18,7 +18,15 @@
         <jta-data-source>java:jboss/datasources/MysqlDS</jta-data-source>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
-            <property name="hibernate.dialact" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="pgsql" transaction-type="JTA">
+        <jta-data-source>java:jboss/datasources/PostgresqlDS</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect" />
         </properties>
     </persistence-unit>
 

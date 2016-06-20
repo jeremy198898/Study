@@ -4,24 +4,29 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Created by jeremy on 2016/6/18.
+ * Created by jeremy on 2016/6/20.
+ * From Postgresql , this is just test.
  */
 @Entity
 @Table(name = "t_users")
-public class Users implements Serializable {
-
-    public Users(){}
+public class User implements Serializable{
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "username", length = 50, nullable = false)
+    @Column(name = "orgid", nullable = false)
+    private int orgid;
+
+    @Column(name = "username", nullable = false)
     private String username;
 
-    @Column (name = "password", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "nickname")
+    private String nickname;
 
     public int getId() {
         return id;
@@ -29,6 +34,14 @@ public class Users implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getOrgid() {
+        return orgid;
+    }
+
+    public void setOrgid(int orgid) {
+        this.orgid = orgid;
     }
 
     public String getUsername() {
@@ -45,5 +58,13 @@ public class Users implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }

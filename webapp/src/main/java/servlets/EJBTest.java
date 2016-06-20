@@ -15,7 +15,7 @@ import java.io.PrintWriter;
  * Created by jeremy on 2016/6/19.
  */
 @WebServlet("/test")
-public class Test extends HttpServlet {
+public class EJBTest extends HttpServlet {
 
     @EJB
     private TestBean tb;

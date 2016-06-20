@@ -1,6 +1,6 @@
 package servlets;
 
-import entity.Users;
+import entity.Org;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -17,11 +17,14 @@ import java.util.List;
 /**
  * Created by jeremy on 2016/6/20.
  */
-@WebServlet("/entitytest")
+@WebServlet("entitytest")
 public class EntityTest extends HttpServlet
 {
-    @PersistenceContext (name = "mysql")
+    @PersistenceContext (unitName = "pgsql")
     private EntityManager em;
+
+    //@PersistenceContext(unitName = "mysql")
+    //private EntityManager mysql;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -29,12 +32,17 @@ public class EntityTest extends HttpServlet
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
 
-        Query q = em.createQuery("select u from Users u");
-        List<Users> ulist = q.getResultList();
-        for (Users users : ulist){
-            out.println(users.getUsername());
+        Query q = em.createQuery("select o from Org o");
+        List<Org> orglist = q.getResultList();
+        for (Org org : orglist){
+            out.println(org.getId()+" "+org.getCode()+"<br />");
         }
 
-        out.println("Hello");
+        //Query users = mysql.createQuery("select u from Users  u");
+        //List<Users> userlist = users.getResultList();
+        //for (Users user : userlist){
+        //   out.println(user.getId()+" "+user.getUsername()+" "+user.getPassword()+"<br />");
+        //}
+
     }
 }
