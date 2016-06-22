@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by jeremy on 2016/6/20.
  */
-@WebServlet("user")
+@WebServlet("/user")
 public class UserServlet extends HttpServlet {
 
     @PersistenceContext(unitName = "pgsql")
@@ -29,12 +29,12 @@ public class UserServlet extends HttpServlet {
 
         PrintWriter out = resp.getWriter();
 
-        out.println("Hello,all users!");
+        out.println("Hello,all users list below!<br />");
 
         Query rs = pgsql.createQuery("select u from User u");
         List<User> users = rs.getResultList();
         for(User user : users){
-            out.println(user.getOrgid()+" "+user.getUsername()+" "+user.getPassword());
+            out.println("用户组织编码:"+user.getOrgid()+"<br />Username:"+user.getUsername()+"<br/>Password:"+user.getPassword());
         }
         pgsql.clear();
     }

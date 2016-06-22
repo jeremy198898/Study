@@ -15,10 +15,10 @@ import java.io.PrintWriter;
  * Created by jeremy on 2016/5/12.
  */
 @WebServlet("/hello")
-public class Hi extends HttpServlet
+public class HiServlets extends HttpServlet
 {
-    @EJB
-    private HiBean hiBean;
+    //@EJB
+    //private HiBean hiBean;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -28,10 +28,10 @@ public class Hi extends HttpServlet
         //String c = req.getParameter("test");
         //String x = req.getParameter("number");
         //String chtest = "这是个测试";
-        String hi = hiBean.sayHello();
+        //String hi = hiBean.sayHello();
         //String client = req.getHeader("User-Agent");
         //out.print("The parameter is "+c+" "+x);
-        out.println(hi);
+        //out.println(hi);
 
     }
 
