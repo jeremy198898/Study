@@ -1,8 +1,8 @@
 package servlets;
 
+import beans.inf.HiInf;
 import beans.inf.UserInf;
-import ejb.beans.UserBean;
-import pojo.UserVo;
+import entity.User;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -20,17 +20,20 @@ import java.io.PrintWriter;
 public class EJBTest extends HttpServlet {
 
     @EJB
-    private UserBean userBean;
+    UserInf user;
+
+    @EJB
+    HiInf hi;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        UserVo userVo = new UserVo();
+        User userVo = new User();
         userVo.setOrgid(8888);
         userVo.setUsername("张志德");
         userVo.setPassword("987625214");
-        //userBean.create(userVo);
-        out.println(userBean.sayHi());
+        user.create(userVo);
+        //out.println(hi.sayHello()+"<br/>"+user.sayHello());
     }
 }

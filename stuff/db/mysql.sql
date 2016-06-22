@@ -1,11 +1,8 @@
 --Mysql
 
---- table t_users
+--- table t_department
 
-DROP SEQUENCE IF EXISTS seq_users CASCADE;
-CREATE SEQUENCE seq_users;
-DROP TABLE IF EXISTS t_users CASCADE;
-CREATE TABLE t_users
+CREATE TABLE t_department
 (
   id									BIGINT UNIQUE DEFAULT NEXTVAL('seq_users') NOT NULL ,
 

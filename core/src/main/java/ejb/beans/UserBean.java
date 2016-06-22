@@ -1,7 +1,7 @@
 package ejb.beans;
 
 import beans.inf.UserInf;
-import pojo.UserVo;
+import entity.User;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -21,12 +21,13 @@ public class UserBean implements UserInf
     }
 
     @Override
-    public void create(UserVo userVo)
+    public void create(User user)
     {
-        em.persist(userVo);
+        em.persist(user);
     }
 
-    public String sayHi()
+    @Override
+    public String sayHello()
     {
         return "Fuck";
     }
