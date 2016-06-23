@@ -33,6 +33,7 @@ public class EJBTest extends HttpServlet {
         userVo.setOrgid(8888);
         userVo.setUsername("张志德");
         userVo.setPassword("987625214");
+        userVo.setNickname("zzd");
         user.create(userVo);
         //out.println(hi.sayHello()+"<br/>"+user.sayHello());
     }
