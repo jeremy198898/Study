@@ -17,7 +17,7 @@ import java.io.PrintWriter;
 /**
  * Created by jeremy on 2016/6/19.
  */
-@WebServlet("test")
+@WebServlet("/test")
 public class EJBTest extends HttpServlet {
 
     /*
@@ -30,20 +30,21 @@ public class EJBTest extends HttpServlet {
     //HiInf hi;
 
     //3.you can use JNDI lookup to call EJB
-    @Override
-    public void init() throws ServletException
-    {
-        LookupBeans lb = new LookupBeans();
-        try
-        {
-            Object object = lb.lookupBean("UserEJB");
-            System.out.println(object);
-        }
-        catch (NamingException e)
-        {
-            e.printStackTrace();
-        }
-    }
+//    @Override
+//    public void init() throws ServletException
+//    {
+//        LookupBeans lb = new LookupBeans();
+//        try
+//        {
+//            Object object = lb.lookupBean("UserEJB");
+//            UserInf user = (UserInf)object;
+//            System.out.println("test");
+//        }
+//        catch (NamingException e)
+//        {
+//            e.printStackTrace();
+//        }
+//    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -58,6 +59,7 @@ public class EJBTest extends HttpServlet {
         //out.println(hi.sayHello()+"<br/>"+user.sayHello());
 
         //out.println(user.sayHello());
+        out.println("testaa");
 
     }
 }

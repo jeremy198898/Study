@@ -7,6 +7,7 @@ dependencies {
     deploy project(':core') //only necessary for EJB jars
 
     deploy project(path: ':webapp', configuration: 'archives')
+
     deploy project(path: ':service', configuration: 'archives')
 
     // The following dependencies will become ear libs and will
@@ -16,12 +17,12 @@ dependencies {
 
 ear{
 	//rename the out package
-    archiveName = "redtree.ear"
+    archiveName = 'redtree.ear'
 
-    deploymentDescriptor{
-        applicationName = "redtree"
-        displayName = "redtree"
-    }
+    //deploymentDescriptor{
+    //    applicationName = "redtree"
+    //    displayName = "redtree"
+    //}
 }
 
 /*

@@ -11,7 +11,6 @@ public class LookupBeans
     // Since we haven't deployed the application as a .ear, the app name for us will be an empty string
     final String appName = "redtree";
     final String moduleName = "core";
-
     final String prefixLookup = "java:global";
 
     /**
