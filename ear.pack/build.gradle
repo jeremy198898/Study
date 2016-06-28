@@ -1,0 +1,35 @@
+apply plugin: 'ear'
+
+dependencies {
+    // The following dependencies will be the ear modules and
+    // will be placed in the ear root
+
+    deploy project(':core') //only necessary for EJB jars
+
+    deploy project(path: ':webapp', configuration: 'archives')
+    deploy project(path: ':service', configuration: 'archives')
+
+    // The following dependencies will become ear libs and will
+    // be placed in a dir configured via the libDirName property
+    
+}
+
+ear{
+	//rename the out package
+    archiveName = "redtree.ear"
+
+    deploymentDescriptor{
+        applicationName = "redtree"
+        displayName = "redtree"
+    }
+}
+
+/*
+*假设你已经有了 application.xml ，并且想要使用它而不是去配置 ear.deploymentDescriptor 代码段。
+* 去把 META-INF/application.xml 放在你的源文件夹里的正确的位置（请查看 appDirName 属性）。
+* 这个已存在的文件的内容将会被使用，而 ear.deploymentDescriptor 里的显示配置则会被忽略。
+* */
+
+
+
+
