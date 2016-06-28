@@ -6,4 +6,4 @@ core/build/
 tools/build/
 classes/
 .gradle/
-
+ear.pack/build/

@@ -1,7 +1,5 @@
 package restful;
 
-import ejb.beans.HiBean;
-
 import javax.ejb.EJB;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -15,8 +13,8 @@ import javax.ws.rs.core.MediaType;
 @Path("users")
 public class HiRest {
 
-    @EJB
-    private HiBean hiBean;
+    //@EJB
+    //private HiBean hiBean;
 
     @GET
     @Path("showall")
@@ -33,12 +31,12 @@ public class HiRest {
         return "Oops, there is no content here!";
     }
 
-    @GET
-    @Path("ejb")
-    @Produces (MediaType.APPLICATION_JSON)
-    public String ejb()
-    {
-        return hiBean.sayHello();
-    }
+//    @GET
+//    @Path("ejb")
+//    @Produces (MediaType.APPLICATION_JSON)
+//    public String ejb()
+//    {
+//        return hiBean.sayHello();
+//    }
 
 }

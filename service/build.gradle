@@ -4,7 +4,9 @@ apply plugin: 'war'
 dependencies {
 	//compile fileTree(dir: '../libs', include: ['*.jar'])
 	//compile group: 'com.sun.jersey', name: 'jersey-core', version: '1.19.1'
-	compile project (':core')
+
+	//把需要的模块编译进去，/lib
+	//compile project (':core')
 }
 
 

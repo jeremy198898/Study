@@ -2,7 +2,7 @@
 apply plugin: 'war'
 
 dependencies{
-    compile project (':core')
+    //compile project (':core')
 }
 
 
