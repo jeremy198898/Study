@@ -1,6 +1,6 @@
 package servlets;
 
-import beans.inf.UserInf;
+//import beans.inf.UserInf;
 import beans.look.LookupBeans;
 
 import javax.ejb.EJB;
