@@ -13,4 +13,6 @@ public interface UserInf
     void create(User user);
 
     String sayHello();
+
+    void add(int orgid, String username, String password, String nickname);
 }

@@ -1,7 +1,8 @@
 package servlets;
 
-//import beans.inf.UserInf;
+import beans.inf.UserInf;
 import beans.look.LookupBeans;
+import ejb.beans.NoInfBeanBean;
 
 import javax.ejb.EJB;
 import javax.naming.InitialContext;
@@ -23,28 +24,28 @@ public class EJBTest extends HttpServlet {
     /*
     * Three ways to cll EJB*/
     //1.portable way to call since EJB 3.1
-    //@EJB(lookup = "java:global/redtree/core/UserEJB!beans.inf.UserInf")
-    //UserInf user;
+    @EJB(lookup = "java:global/redtree/core/NoInfBeanEJB")
+    NoInfBeanBean noInfBeanBean;
 
     //2.you can compile EJB module which included in war as jar
     //HiInf hi;
 
     //3.you can use JNDI lookup to call EJB
-//    @Override
-//    public void init() throws ServletException
-//    {
-//        LookupBeans lb = new LookupBeans();
-//        try
-//        {
-//            Object object = lb.lookupBean("UserEJB");
-//            UserInf user = (UserInf)object;
-//            System.out.println("test");
-//        }
-//        catch (NamingException e)
-//        {
-//            e.printStackTrace();
-//        }
-//    }
+    @Override
+    public void init() throws ServletException
+    {
+        LookupBeans lb = new LookupBeans();
+        try
+        {
+            Object object = lb.lookupBean("UserEJB");
+            UserInf user = (UserInf)object;
+            System.out.println(user.sayHello());
+        }
+        catch (NamingException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -59,7 +60,9 @@ public class EJBTest extends HttpServlet {
         //out.println(hi.sayHello()+"<br/>"+user.sayHello());
 
         //out.println(user.sayHello());
-        out.println("testaa");
+        //out.println("testaa");
 
+        //test with no interface EJB bean
+        out.println(noInfBeanBean.test());
     }
 }

@@ -5,24 +5,23 @@ dependencies {
     // will be placed in the ear root
 
     deploy project(':core') //only necessary for EJB jars
-
     deploy project(path: ':webapp', configuration: 'archives')
-
     deploy project(path: ':service', configuration: 'archives')
 
     // The following dependencies will become ear libs and will
     // be placed in a dir configured via the libDirName property
-    
+    //compile group: 'javax', name: 'javaee-api', version: '7.0'
 }
 
 ear{
+    //appDirName = 'src/main/application'
 	//rename the out package
-    archiveName = 'redtree.ear'
+    archiveName = 'rt.ear'
 
-    //deploymentDescriptor{
-    //    applicationName = "redtree"
-    //    displayName = "redtree"
-    //}
+    deploymentDescriptor{
+        applicationName = "redtree"
+        displayName = "redtree"
+    }
 }
 
 /*

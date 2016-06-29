@@ -29,6 +29,17 @@ public class UserBean implements UserInf
     @Override
     public String sayHello()
     {
-        return "Fuck";
+        return "Test for EJB bean with interface.";
+    }
+
+    @Override
+    public void add(int orgid, String username, String password, String nickname)
+    {
+        User user = new User();
+        user.setOrgid(orgid);
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setNickname(nickname);
+        em.persist(user);
     }
 }
