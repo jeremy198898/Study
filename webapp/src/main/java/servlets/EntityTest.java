@@ -1,5 +1,6 @@
 package servlets;
 
+
 import beans.inf.UserInf;
 import entity.User;
 
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 /**
  * Created by jeremy on 2016/6/29.
@@ -29,6 +31,7 @@ public class EntityTest extends HttpServlet
 
         out.println("Entity Test");
 
+        //Directly use entity
         //User user = new User();
         //user.setOrgid(235689);
         //user.setUsername("zhangzhide");
@@ -37,8 +40,22 @@ public class EntityTest extends HttpServlet
 
         //userInf.create(user);
 
-        userInf.add(998856, "张志德", "123456", "zzd");
+        //second way is to use
+        //userInf.add(998856, "张志德", "123456", "zzd");
+        out.println("<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>EntityTest</title></head><body>");
+        out.println("<div><div><form name=\"adduser\" action=\"/webapp/entity\" method=\"get\"><input type=\"text\" name=\"username\"/><input type=\"submit\" name=\"Create User\"></form></div><table>");
 
-        out.println("<script>alert('Successfully added!')</script>");
+        List<User> users = userInf.getList();
+        for(User user : users){
+            out.println("用户组织编码:"+user.getOrgid()+" Username:"+user.getUsername()+"Password:"+user.getPassword()+"<br/>");
+        }
+        //out.println("<script>alert('Successfully added!')</script>");
+
+        out.println("</table></div></body></html>");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        userInf.add(998856, "张志德zz", "123456", "zzder");
     }
 }

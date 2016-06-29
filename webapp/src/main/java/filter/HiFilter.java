@@ -27,7 +27,7 @@ public class HiFilter implements Filter {
 
         chain.doFilter(request, response);
 
-        //System.out.println("Filter Successfully.");
+        System.out.println("Filter Successfully.");
     }
 
     @Override
