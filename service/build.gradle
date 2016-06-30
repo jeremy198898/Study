@@ -7,6 +7,8 @@ dependencies {
 
 	//把需要的模块编译进去，/lib
 	//compile project (':core')
+
+    providedCompile project (':core')
 }
 
 

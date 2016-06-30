@@ -1,5 +1,7 @@
 package restful;
 
+import beans.inf.UserInf;
+
 import javax.ejb.EJB;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,19 +12,12 @@ import javax.ws.rs.core.MediaType;
  * Created by jeremy on 2016/5/31.
  */
 
-@Path("users")
-public class HiRest {
+@Path("hi")
+public class HiRest
+{
 
-    //@EJB
-    //private HiBean hiBean;
-
-    @GET
-    @Path("showall")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getHtml()
-    {
-        return "Hello World!";
-    }
+    @EJB(lookup = "java:global/redtree/core/UserEJB!beans.inf.UserInf")
+    UserInf userInf;
 
     @GET
     @Produces(MediaType.TEXT_HTML)
@@ -31,12 +26,13 @@ public class HiRest {
         return "Oops, there is no content here!";
     }
 
-//    @GET
-//    @Path("ejb")
-//    @Produces (MediaType.APPLICATION_JSON)
-//    public String ejb()
-//    {
-//        return hiBean.sayHello();
-//    }
+    @GET
+    @Path("test")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String hi()
+    {
+        return userInf.sayHello();
+    }
+
 
 }
