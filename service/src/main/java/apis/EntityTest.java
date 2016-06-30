@@ -17,8 +17,8 @@ import java.util.List;
 @Path("user")
 public class EntityTest
 {
-    //@EJB(lookup = "java:global/redtree/core/UserEJB!beans.inf.UserInf")
-    //UserInf userInf;
+    @EJB(lookup = "java:global/redtree/core/UserEJB!beans.inf.UserInf")
+    UserInf userInf;
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -27,18 +27,18 @@ public class EntityTest
         return "Oops, there is nothing here!";
     }
 
-//    @GET
-//    @Path("showall")
-//    @Produces(JsonHeader.JSON_HEADER)
-//    public String showall()
-//    {
-//        List<User> users = userInf.getList();
-//        String s = "";
-//        for (User user:users)
-//        {
-//            s +=user.getUsername()+" ";
-//        }
-//        return s;
-//    }
+    @GET
+    @Path("showall")
+    @Produces(JsonHeader.JSON_HEADER)
+    public String showall()
+    {
+        List<User> users = userInf.getList();
+        String s = "";
+        for (User user:users)
+        {
+            s +=user.getUsername()+" ";
+        }
+        return s;
+    }
 
 }

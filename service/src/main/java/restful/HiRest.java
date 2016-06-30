@@ -1,6 +1,7 @@
 package restful;
 
-import beans.inf.UserInf;
+
+import ejb.beans.NoInfBeanBean;
 
 import javax.ejb.EJB;
 import javax.ws.rs.GET;
@@ -16,8 +17,8 @@ import javax.ws.rs.core.MediaType;
 public class HiRest
 {
 
-    @EJB(lookup = "java:global/redtree/core/UserEJB!beans.inf.UserInf")
-    UserInf userInf;
+    @EJB(lookup = "java:global/redtree/core/NoInfBeanEJB")
+    NoInfBeanBean nf;
 
     @GET
     @Produces(MediaType.TEXT_HTML)
@@ -31,7 +32,7 @@ public class HiRest
     @Produces(MediaType.TEXT_PLAIN)
     public String hi()
     {
-        return userInf.sayHello();
+        return nf.test();
     }
 
 
