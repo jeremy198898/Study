@@ -1,4 +1,4 @@
-package restful;
+package application;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -8,5 +8,5 @@ import javax.ws.rs.core.Application;
  */
 
 @ApplicationPath("")
-public class ApiApplication extends Application {
+public class ApplicationContext extends Application {
 }

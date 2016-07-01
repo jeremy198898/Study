@@ -1,4 +1,4 @@
-package restful;
+package application;
 
 import javax.ws.rs.core.MediaType;
 

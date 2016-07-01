@@ -19,7 +19,7 @@ import java.util.List;
 @WebServlet("entity")
 public class EntityTest extends HttpServlet
 {
-    @EJB(lookup = "java:global/redtree/core/UserEJB!beans.inf.UserInf")
+    @EJB
     UserInf userInf;
 
     @Override
@@ -27,6 +27,8 @@ public class EntityTest extends HttpServlet
     {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
+
+        //System.out.println(userInf);
 
         //Directly use entity
         //User user = new User();

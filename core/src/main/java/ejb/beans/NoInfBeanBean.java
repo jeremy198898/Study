@@ -10,10 +10,6 @@ import javax.ejb.Stateless;
 @LocalBean
 public class NoInfBeanBean
 {
-    public NoInfBeanBean()
-    {
-    }
-
     public String test()
     {
         return "This bean is just a test with no interface.";

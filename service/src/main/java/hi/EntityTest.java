@@ -1,36 +1,37 @@
-package apis;
+package hi;
 
+import application.JsonHeader;
 import beans.inf.UserInf;
 import entity.User;
-import restful.JsonHeader;
 
+import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
- * Created by jeremy on 2016/6/30.
+ * Created by jeremy on 2016/7/1.
  */
 @Path("user")
+@ManagedBean
 public class EntityTest
 {
-    @EJB(lookup = "java:global/redtree/core/UserEJB!beans.inf.UserInf")
+    @EJB
     UserInf userInf;
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(JsonHeader.JSON_HEADER)
     public String error()
     {
-        return "Oops, there is nothing here!";
+        return "There is nothing here you are looking for!";
     }
 
     @GET
     @Path("showall")
     @Produces(JsonHeader.JSON_HEADER)
-    public String showall()
+    public String getAllUsers()
     {
         List<User> users = userInf.getList();
         String s = "";
