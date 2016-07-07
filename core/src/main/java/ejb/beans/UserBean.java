@@ -51,4 +51,12 @@ public class UserBean implements UserInf
         List<User> users = rs.getResultList();
         return users;
     }
+
+    @Override
+    public User user()
+    {
+        User user = new User();
+        return null;
+    }
+
 }

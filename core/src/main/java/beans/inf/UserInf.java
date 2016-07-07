@@ -18,4 +18,6 @@ public interface UserInf
     void add(int orgid, String username, String password, String nickname);
 
     List<User> getList();
+
+    User user();
 }

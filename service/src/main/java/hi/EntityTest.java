@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * Created by jeremy on 2016/7/1.
  */
+
 @Path("user")
 @ManagedBean
 public class EntityTest
@@ -40,6 +41,15 @@ public class EntityTest
             s +=user.getUsername()+" ";
         }
         return s;
+    }
+
+    @GET
+    @Path("userjson")
+    @Produces(JsonHeader.JSON_HEADER)
+    public List<User> allUser()
+    {
+        List<User> users = userInf.getList();
+        return users;
     }
 
 }
