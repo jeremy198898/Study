@@ -60,10 +60,11 @@ public class EntityTest
 
     @GET
     @Path("username")
-    public User getUserByName()
+    public List<User> getUserByName()
     {
         String name = "张志德";
-        return userInf.findUserByName(name);
+        List<User> users = userInf.findUserByName("999999999");
+        return users;
     }
 
 

@@ -61,10 +61,10 @@ public class UserBean implements UserInf
     }
 
     @Override
-    public User findUserByName(String name) {
-        User user = new User();
-        user = em.find(User.class, name);
-        return user;
+    public List<User> findUserByName(String name) {
+        Query rs = em.createQuery("SELECT u FROM User u WHERE u.username=?1");
+        List<User> users = rs.setParameter(1, name).getResultList();
+        return users;
     }
 
 }

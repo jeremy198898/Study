@@ -21,5 +21,5 @@ public interface UserInf
 
     User findUserById(int id);
 
-    User findUserByName(String name);
+    List<User> findUserByName(String name);
 }
