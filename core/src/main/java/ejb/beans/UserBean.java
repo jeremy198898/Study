@@ -46,17 +46,25 @@ public class UserBean implements UserInf
     }
 
     @Override
-    public List<User> getList() {
+    public List<User> getAllUsers() {
         Query rs = em.createQuery("select u from User u");
         List<User> users = rs.getResultList();
         return users;
     }
 
     @Override
-    public User user()
+    public User findUserById(int id)
     {
         User user = new User();
-        return null;
+        user = em.find(User.class, id);
+        return user;
+    }
+
+    @Override
+    public User findUserByName(String name) {
+        User user = new User();
+        user = em.find(User.class, name);
+        return user;
     }
 
 }

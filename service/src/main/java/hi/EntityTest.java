@@ -17,13 +17,13 @@ import java.util.List;
 
 @Path("user")
 @ManagedBean
+@Produces(JsonHeader.JSON_HEADER)
 public class EntityTest
 {
     @EJB
     UserInf userInf;
 
     @GET
-    @Produces(JsonHeader.JSON_HEADER)
     public String error()
     {
         return "There is nothing here you are looking for!";
@@ -31,10 +31,9 @@ public class EntityTest
 
     @GET
     @Path("showall")
-    @Produces(JsonHeader.JSON_HEADER)
     public String getAllUsers()
     {
-        List<User> users = userInf.getList();
+        List<User> users = userInf.getAllUsers();
         String s = "";
         for (User user:users)
         {
@@ -45,11 +44,27 @@ public class EntityTest
 
     @GET
     @Path("userjson")
-    @Produces(JsonHeader.JSON_HEADER)
     public List<User> allUser()
     {
-        List<User> users = userInf.getList();
+        List<User> users = userInf.getAllUsers();
         return users;
     }
+
+    @GET
+    @Path("userinfo")
+    public User getUserById()
+    {
+        int id = 340;
+        return userInf.findUserById(id);
+    }
+
+    @GET
+    @Path("username")
+    public User getUserByName()
+    {
+        String name = "张志德";
+        return userInf.findUserByName(name);
+    }
+
 
 }

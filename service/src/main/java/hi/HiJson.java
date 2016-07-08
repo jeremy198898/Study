@@ -1,6 +1,7 @@
 package hi;
 
 import application.JsonHeader;
+import entity.User;
 import test.Test;
 
 import javax.json.Json;
@@ -13,10 +14,10 @@ import javax.ws.rs.Produces;
  * This demo is for formatting data of API.
  */
 @Path("hi")
+@Produces(JsonHeader.JSON_HEADER)
 public class HiJson
 {
     @GET
-    @Produces(JsonHeader.JSON_HEADER)
     public String hi()
     {
         return "Hello, Restful!";
@@ -24,7 +25,6 @@ public class HiJson
 
     @GET
     @Path("jsontest")
-    @Produces(JsonHeader.JSON_HEADER)
     public Test testJson()
     {
         Test test = new Test();
@@ -35,9 +35,9 @@ public class HiJson
 
     @GET
     @Path("buildfactory")
-    @Produces(JsonHeader.JSON_HEADER)
     public String buildFactory()
     {
         return "buildfactory";
     }
+
 }

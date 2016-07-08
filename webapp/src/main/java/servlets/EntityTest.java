@@ -47,7 +47,7 @@ public class EntityTest extends HttpServlet
             out.print("<div><div><form name=\"adduser\" action=\"/webapp/entity\" method=\"get\"><input type=\"text\" name=\"username\"/><input type=\"submit\" value=\"创建新用户\"></form></div><br /><div class=\"tb\"><table width=\"600\" border=\"0\" cellspacing=\"1\" cellpadding=\"0\">");
             out.print("<tr><th>ID</th><th>组织编码</th><th>用户名</th><th>密码</th><th>昵称</th></tr>");
 
-            List<User> users = userInf.getList();
+            List<User> users = userInf.getAllUsers();
             for(User user : users){
                 out.print("<tr><td>"+user.getId()+"</td><td>"+user.getOrgid()+"</td><td>"+user.getUsername()+"</td><td>"+user.getPassword()+"</td><td>"+user.getNickname()+"</td></tr>");
             }
@@ -66,7 +66,7 @@ public class EntityTest extends HttpServlet
             out.print("<div><div><form name=\"adduser\" action=\"/webapp/entity\" method=\"get\"><input type=\"text\" name=\"username\"/><input type=\"submit\" value=\"创建新用户\"></form></div><br /><div class=\"tb\"><table width=\"600\" border=\"0\" cellspacing=\"1\" cellpadding=\"0\">");
             out.print("<tr><th>ID</th><th>组织编码</th><th>用户名</th><th>密码</th><th>昵称</th></tr>");
 
-            List<User> users = userInf.getList();
+            List<User> users = userInf.getAllUsers();
             for(User user : users){
                 out.print("<tr><td>"+user.getId()+"</td><td>"+user.getOrgid()+"</td><td>"+user.getUsername()+"</td><td>"+user.getPassword()+"</td><td>"+user.getNickname()+"</td></tr>");
             }

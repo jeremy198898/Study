@@ -17,7 +17,9 @@ public interface UserInf
 
     void add(int orgid, String username, String password, String nickname);
 
-    List<User> getList();
+    List<User> getAllUsers();
 
-    User user();
+    User findUserById(int id);
+
+    User findUserByName(String name);
 }
