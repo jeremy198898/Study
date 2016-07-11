@@ -1,10 +1,8 @@
 package hi;
 
 import application.JsonHeader;
-import entity.User;
 import test.Test;
 
-import javax.json.Json;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
