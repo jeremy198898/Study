@@ -8,7 +8,7 @@ public class GoodsBean {
     private String name;
     private String spec;
     private String model;
-    private float price;
+    private String price;
     private String descript;
 
     public int getId() {
@@ -43,11 +43,13 @@ public class GoodsBean {
         this.spec = spec;
     }
 
-    public float getPrice() {
+    public String getPrice()
+    {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(String price)
+    {
         this.price = price;
     }
 

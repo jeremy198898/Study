@@ -31,14 +31,13 @@ public class GoodsExcelReader
             {
                 continue;
             }
-            for (int rowNum=1; rowNum<=sheet.getLastRowNum(); rowNum++)
+            for (int rowNum=0; rowNum<=sheet.getLastRowNum(); rowNum++)
             {
                 HSSFRow row = sheet.getRow(rowNum);
                 if (row != null)
                 {
                     goods = new GoodsBean();
                     HSSFCell name = row.getCell(0);
-
                     HSSFCell model = row.getCell(1);
                     HSSFCell spec = row.getCell(2);
                     HSSFCell price = row.getCell(3);
@@ -46,7 +45,7 @@ public class GoodsExcelReader
                     goods.setName(getValue(name));
                     goods.setModel(getValue(model));
                     goods.setSpec(getValue(spec));
-                    goods.setPrice(Float.valueOf(getValue(price)));
+                    goods.setPrice(getValue(price));
                     goods.setDescript(getValue(descript));
                     list.add(goods);
                 }
@@ -58,6 +57,10 @@ public class GoodsExcelReader
 
     private String getValue(HSSFCell cell)
     {
+        if(null == cell)
+        {
+            return "";
+        }
         if (cell.getCellType() == Cell.CELL_TYPE_STRING)
         {
             return String.valueOf(cell.getStringCellValue());
@@ -66,6 +69,6 @@ public class GoodsExcelReader
         {
             return String.valueOf(cell.getNumericCellValue());
         }
-        return null;
+        return "";
     }
 }

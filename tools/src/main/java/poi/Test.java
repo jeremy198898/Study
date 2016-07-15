@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class Test
 {
-    private final static String FILE_ROOT_PATH = "D:\\test\\";
+    private final static String FILE_ROOT_PATH = "D:\\poi-excel\\";
     private final static String EXCEL_2003_SUFFIX = "xls";
 
     static XSSFRow row;

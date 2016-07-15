@@ -13,7 +13,7 @@ public class ReadExcel
 {
     private final static String EXCEL_2003_SUFFIX = "xls";
     private final static String EXCEL_2007_SUFFIX = "xlsx";
-    private final static String FILE_ROOT_PATH = "D:\\test\\";
+    private final static String FILE_ROOT_PATH = "D:\\poi-excel\\";
 
     private Workbook wb = null;
 
