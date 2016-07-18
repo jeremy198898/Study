@@ -25,7 +25,7 @@ public class Test
         if (list != null)
         {
             for (GoodsBean goods:list){
-                System.out.println(goods.getName()+" "+goods.getModel()+" "+goods.getSpec()+" "+goods.getPrice()+" "+goods.getDescript());
+                System.out.println(goods.getName()+"|"+goods.getModel()+"|"+goods.getSpec()+"|"+goods.getPrice()+"|"+goods.getDescript());
             }
         }
     }

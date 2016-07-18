@@ -18,6 +18,7 @@ import java.util.List;
 @Path("user")
 @ManagedBean
 @Produces(JsonHeader.JSON_HEADER)
+//@Consumes
 public class EntityTest
 {
     @EJB
