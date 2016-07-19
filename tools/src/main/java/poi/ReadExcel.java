@@ -4,22 +4,22 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 
 
 public class ReadExcel
 {
     private final static String EXCEL_2003_SUFFIX = "xls";
     private final static String EXCEL_2007_SUFFIX = "xlsx";
-    private final static String FILE_ROOT_PATH = "D:\\poi-excel\\";
 
     private Workbook wb = null;
 
     public Workbook read(String fileName)
     {
-        FileInputStream inputStream = null;
+        InputStream inputStream = null;
         inputStream = readExcelToStream(fileName);
 
         if (inputStream != null)
@@ -45,15 +45,18 @@ public class ReadExcel
         return wb;
     }
 
-    private FileInputStream readExcelToStream(String fileName)
+    private InputStream readExcelToStream(String url)
     {
-        FileInputStream inputStream = null;
+        InputStream inputStream = null;
+        URL fileUrl = transUrl(url);
+        URLConnection urlConnection = null;
         try
         {
-            inputStream = new FileInputStream(FILE_ROOT_PATH + fileName);
+            urlConnection = fileUrl.openConnection();
+            inputStream = urlConnection.getInputStream();
             return inputStream;
         }
-        catch (FileNotFoundException e)
+        catch (IOException e)
         {
             e.printStackTrace();
         }
@@ -80,4 +83,19 @@ public class ReadExcel
         return isExcel2003;
     }
 
+    //链接地址转换
+    private static URL transUrl(String urlString)
+    {
+        URL url = null;
+        try
+        {
+            url = new URL(urlString);
+            return url;
+        }
+        catch (MalformedURLException e)
+        {
+            e.printStackTrace();
+        }
+        return url;
+    }
 }

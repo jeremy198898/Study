@@ -15,10 +15,10 @@ import java.util.List;
  */
 public class GoodsExcelReader
 {
-    public List<GoodsBean> read(String fileName)
+    public List<GoodsBean> read(String url)
     {
         ReadExcel excel =  new ReadExcel();
-        HSSFWorkbook wb = (HSSFWorkbook) excel.read(fileName);
+        HSSFWorkbook wb = (HSSFWorkbook) excel.read(url);
 
         GoodsBean goods = null;
         List<GoodsBean> list  = new ArrayList<GoodsBean>();
@@ -31,7 +31,7 @@ public class GoodsExcelReader
             {
                 continue;
             }
-            for (int rowNum=0; rowNum<=sheet.getLastRowNum(); rowNum++)
+            for (int rowNum=2; rowNum<=sheet.getLastRowNum(); rowNum++)
             {
                 HSSFRow row = sheet.getRow(rowNum);
                 if (row != null)
