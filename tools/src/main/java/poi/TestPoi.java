@@ -32,7 +32,7 @@ public class TestPoi
 //                System.out.println(goods.getName()+"|"+goods.getModel()+"|"+goods.getSpec()+"|"+goods.getPrice()+"|"+goods.getDescript());
 //            }
 //        }
-
+        //String url = "http:\/\/static.gomro.cn\/market\/b87a9adc-5278-a38d-722e-746f46f8e15f.xls";
         Date test = new Date();
 
         Date test1 = new Date();

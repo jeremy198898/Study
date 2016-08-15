@@ -15,5 +15,8 @@ subprojects{
 		// http://mvnrepository.com/artifact/javax/javaee-api
 		compile group: 'javax', name: 'javaee-api', version: '7.0'
 
+		// https://mvnrepository.com/artifact/junit/junit
+		compile group: 'junit', name: 'junit', version: '4.12'
+
 	}
 }
