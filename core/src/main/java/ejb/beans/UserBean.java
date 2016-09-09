@@ -35,6 +35,7 @@ public class UserBean implements UserInf
     }
 
     @Override
+
     public void add(int orgid, String username, String password, String nickname)
     {
         User user = new User();

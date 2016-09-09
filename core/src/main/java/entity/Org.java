@@ -8,6 +8,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "t_ec_org")
+@Cacheable
 public class Org implements Serializable {
 
     @Id
