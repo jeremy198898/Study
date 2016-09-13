@@ -4,9 +4,7 @@ import beans.inf.UserInf;
 import entity.User;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -35,7 +33,6 @@ public class UserBean implements UserInf
     }
 
     @Override
-
     public void add(int orgid, String username, String password, String nickname)
     {
         User user = new User();
@@ -48,8 +45,16 @@ public class UserBean implements UserInf
 
     @Override
     public List<User> getAllUsers() {
+        long l = System.currentTimeMillis();
+        System.out.println(l +"------------->>");
+
         Query rs = em.createQuery("select u from User u");
+
         List<User> users = rs.getResultList();
+
+        long l2 = System.currentTimeMillis();
+        System.out.println(l2 +"------------->>end--->"+(l2-l)+"毫秒");
+
         return users;
     }
 

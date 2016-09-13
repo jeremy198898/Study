@@ -9,7 +9,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "t_users")
-@Cacheable
+//@Cacheable
 public class User implements Serializable{
 
     @Id

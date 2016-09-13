@@ -5,7 +5,8 @@ subprojects{
     //apply plugin: 'idea'
 	
 	repositories {
-		mavenCentral()
+		//mavenCentral()
+		maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
 	}
 
     //解决Gradle编译时出现： 编码GBK的不可映射字符

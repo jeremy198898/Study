@@ -19,11 +19,11 @@
     <persistence-unit name="mysql" transaction-type="JTA">
         <jta-data-source>java:jboss/datasources/MysqlDS</jta-data-source>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
-        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <!--<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>-->
         <properties>
             <!--<property name="jboss.as.jpa.providerModule" value="org.hibernate:5.2"/>-->
-            <property name="hibernate.cache.use_second_level_cache" value="true"/>
-            <property name="hibernate.cache.use_query_cache" value="true" />
+            <!--<property name="hibernate.cache.use_second_level_cache" value="true"/>-->
+            <!--<property name="hibernate.cache.use_query_cache" value="true" />-->
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
         </properties>
@@ -32,13 +32,17 @@
     <persistence-unit name="pgsql" transaction-type="JTA">
         <jta-data-source>java:jboss/datasources/PostgresqlDS</jta-data-source>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
-        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <!--<shared-cache-mode>NONE</shared-cache-mode>-->
         <properties>
 
             <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
+            <!--<property name="hibernate.format_sql" value="true"/>-->
 
-            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+
+            <!--<property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.infinispan.JndiInfinispanRegionFactory"/>-->
+            <!--<property name="hibernate.cache.infinispan.cachemanager" value="java:jboss/infinispan/container/hibernate"/>-->
+
+            <property name="hibernate.cache.use_second_level_cache" value="false"/>
 
             <!--<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect" />-->
         </properties>
