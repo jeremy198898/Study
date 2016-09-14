@@ -30,16 +30,16 @@ public class EntityTest extends HttpServlet
 
         //System.out.println(userInf);
 
-        String username = "张志德";
-        for (int i=0; i<=19999; i++){
-            userInf.add(998856, username, "123456", "zzd");
-            System.out.println(username+i);
-        }
+//        String username = "张志德";
+//        for (int i=0; i<=19999; i++){
+//            userInf.add(998856, username, "123456", "zzd");
+//            System.out.println(username+i);
+//        }
 
 //        List<User> users = userInf.getAllUsers();
 //        out.println(users.size());
 
-//        String username = req.getParameter("username");
+        String username = req.getParameter("username");
 //
 //        if (username == null)
 //        {

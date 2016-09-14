@@ -61,8 +61,7 @@ public class UserBean implements UserInf
     @Override
     public User findUserById(int id)
     {
-        User user = new User();
-        user = em.find(User.class, id);
+        User user = em.find(User.class, id);
         return user;
     }
 

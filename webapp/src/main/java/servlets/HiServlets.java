@@ -22,11 +22,11 @@ public class HiServlets extends HttpServlet
         PrintWriter out = resp.getWriter();
         //String c = req.getParameter("test");
         //String x = req.getParameter("number");
-        //String chtest = "这是个测试";
+        String chtest = "这是个测试";
         //String hi = hiBean.sayHello();
         //String client = req.getHeader("User-Agent");
         //out.print("The parameter is "+c+" "+x);
-        //out.println(hi);
+        out.println(chtest);
 
     }
 
