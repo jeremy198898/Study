@@ -9,13 +9,6 @@ import java.io.File;
  */
 public class AliyunOssClient
 {
-    private static final String accessKeyId = "fRjZgRrA0L745UVh";
-    private static final String accessKeySecret = "JxgOW52RnXvgnNmGvE9W3Gus5gbvqm";
-    private static final String endPoint = "oss-cn-hangzhou.aliyuncs.com";
-
-    private static final String buket = "gomro-resources";
-    private static final String static_url = "http://static.gomro.cn/";
-
     private OSSClient ossClient;
 
     public AliyunOssClient()
